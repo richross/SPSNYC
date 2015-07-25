@@ -1,0 +1,15 @@
+﻿@model IEnumerable<o365dev.Models.Employee>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Employees</h2>
+
+<div>
+    @foreach (var item in Model.Where(c => c.objectType=="User"))
+    {
+        <div class="col-md-2">Item:</div>
+        <div class="col-md-5">@Html.DisplayFor(m => item.displayName)&nbsp;</div>
+        <div class="col-md-5">@Html.DisplayFor(m => item.jobTitle)&nbsp;</div>
+    }
+</div>
